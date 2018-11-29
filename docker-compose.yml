@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    restart: always
+    volumes:
+      - .:/api
+    environment:
+      - NODE_ENV=dev
+    links:
+      - db
+    ports:
+      - "8000:8000"
+  
+  db:
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_DATABASES: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "8001:3306"
+    restart: always
