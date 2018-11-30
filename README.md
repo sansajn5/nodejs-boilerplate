@@ -16,15 +16,15 @@
 
 #### How to use it 
 ##### Requiments 
-`
+```
 1.node <br />
 2.docker <br />
-`
+```
 
 #### Steps
-`
+```
 Build container:  docker-compose build <br />
 Run container: docker-compose up <br />
 Run migration: yarn migrate <br />
 Run seed: yarn seed <br />
-`
+```
