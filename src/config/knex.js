@@ -2,15 +2,17 @@
  * File that handles database settings
  */
 const { knexSnakeCaseMappers } = require("objection");
+// Fix for dotenv connection when using knex
+require('dotenv').config({path: '../../.env'});
 
 const options = {
     client: 'mysql',
     connection: {
-      host : process.env.DATABASE_HOST || 'localhost',
-      port: process.env.DATABASE_PORT || '3306',
-      user : process.env.DATABASE_USER || 'root',
-      password : process.env.DATABASE_PASSWORD || 'root',
-      database : process.env.DATABASE_NAME || 'hermes_transport',
+      host : process.env.DATABASE_HOST,
+      port: process.env.DATABASE_PORT,
+      user : process.env.DATABASE_USER,
+      password : process.env.DATABASE_PASSWORD,
+      database : process.env.DATABASE_NAME,
       charset: 'utf8'
     },
     ...knexSnakeCaseMappers()

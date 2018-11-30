@@ -5,7 +5,10 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
-        "watch": "nodemon server.js"
+        "watch": "nodemon server.js",
+        "migrate": "knex migrate:latest --knexfile src/config/knex.js --cwd src/db",
+        "rollback": "knex migrate:rollback --knexfile src/config/knex.js --cwd src/db",
+        "seed": "knex seed:run --knexfile src/config/knex.js --cwd src/db"
     },
     "author": "sansajn",
     "license": "ISC",
