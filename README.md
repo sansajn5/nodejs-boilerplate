@@ -10,3 +10,18 @@
 **1. security **
 **2. swagger **
 **3. mail **
+
+*** How to use it ***
+** Requiments **
+`
+1.node
+2.docker
+`
+
+** Steps **
+`
+Build container:  docker-compose build
+Run container: docker-compose up
+Run migration: yarn migrate
+Run seed: yarn seed
+`
